@@ -54,8 +54,6 @@ function onStartCounter() {
     ) {
       clearInterval(timerId);
     }
-
-    console.log(dateTimer);
   }, 1000);
 
   // console.log(Date.parse(options.defaultDate));
