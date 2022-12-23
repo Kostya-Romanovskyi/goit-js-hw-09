@@ -26,7 +26,7 @@ function onCreatePromises(e) {
   let delayInputValue = Number(form.elements.delay.value);
   const stepInputValue = Number(form.elements.step.value);
 
-  for (i = 1; i <= amountInputValue; i += 1) {
+  for (let i = 1; i <= amountInputValue; i += 1) {
     createPromise(i, delayInputValue)
       .then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
