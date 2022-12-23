@@ -44,8 +44,10 @@ function onStartCounter() {
 
   timerId = setInterval(() => {
     finalDateValue -= 1000;
+
     const dateTimer = convertMs(finalDateValue);
     onUpdateClockFace(dateTimer);
+
     if (
       Number(dateTimer.seconds) === 0 &&
       Number(dateTimer.days) === 0 &&
@@ -56,7 +58,9 @@ function onStartCounter() {
     }
   }, 1000);
 
-  // console.log(Date.parse(options.defaultDate));
+  if (!refs.startBtn.disabled) {
+    refs.startBtn.setAttribute('disabled', '');
+  }
 }
 
 function onUpdateClockFace({ days, hours, minutes, seconds }) {
